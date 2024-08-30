@@ -1,0 +1,24 @@
+#header {
+    height: 23%;
+    display: flex;
+  }
+  
+  #header_part1 {
+    height: 100%;
+    width: 30%;
+  }
+  
+  #header_part1 img {
+      height: 100px;
+      width: 200px;
+      margin-top: 7%;
+  }
+  
+  #header_part2 {
+    height: 100%;
+    width: 70%; 
+  }
+  
+  #header_part2 h1 {
+    margin-top: 5%;
+  }

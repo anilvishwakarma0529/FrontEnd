@@ -1,0 +1,24 @@
+#nav {
+  height: 7%;
+  background-color: green;
+}
+
+#myappul {
+  list-style: none;
+  /* display: flex; */
+}
+
+#myappul li {
+  display: inline-block;
+  margin: 0 20px 0 20px;
+  font-size: 20px;
+  height: 78%;
+  width: 10%;
+  padding-top: 10px;
+  color: rgba(255, 255, 255, 0.699);
+  font-weight: bold;
+}
+
+#myappul li:hover {
+  color: white;
+}

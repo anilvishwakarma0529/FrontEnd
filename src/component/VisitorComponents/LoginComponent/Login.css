@@ -1,0 +1,8 @@
+.login-form {
+  padding: 30px;
+  width: 600px;
+}
+
+.fa-refresh:before {
+  content: "\f021";
+}
