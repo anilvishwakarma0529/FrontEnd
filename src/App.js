@@ -19,12 +19,13 @@ import AddCategory from "./component/AdminComponents/AddCategoryComponent/AddCat
 import AddSubCategory from "./component/AdminComponents/AddSubCategoryComponent/AddSubCategory";
 import Categories from "./component/UserComponents/CategoriesComponent/Categories";
 import SubCategories from "./component/UserComponents/SubCategoriesComponent/SubCategories";
-import Verify from "./component/VerifyComponent/Verify";
+import Verify from "./component/EmailVerifyComponent/EmailVerify";
 import AddProduct from "./component/UserComponents/AddProductComponent/AddProduct";
 import Product from "./component/UserComponents/ProductComponent/Product";
 import BidProductList from "./component/UserComponents/BidProductListComponent/BidProductList";
 import BidProduct from "./component/UserComponents/BidProductComponent/BidProduct";
 import BiddingDetails from "./component/UserComponents/BiddingDetailsComponent/BiddingDetails";
+import EmailVerify from "./component/EmailVerifyComponent/EmailVerify";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/changepassword" element={<Changepassword />}></Route>
           <Route path="/editprofile" element={<Editprofile />}></Route>
           <Route path="/user" element={<Userhome />}></Route>
+          <Route path="/verify/:email" element={<EmailVerify />}></Route>
           <Route path="/categories" element={<Categories />}></Route>
           <Route path="/addproduct" element={<AddProduct />}></Route>
           <Route path="/bidproductlist" element={<BidProductList />}></Route>

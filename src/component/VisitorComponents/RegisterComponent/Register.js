@@ -4,6 +4,7 @@ import axios from "axios";
 import { SaveUserApiUrl } from "../../APIURL/apiUrl";
 import { ThemeContext } from "../../ThemeComponent/ThemeContext";
 import Alert from "../../AlertComponent/Alert";
+import { checkValidData } from "../../ValidationComponent/Validate";
 
 function Register() {
   const { theme } = useContext(ThemeContext);
@@ -32,6 +33,11 @@ function Register() {
     if (!mobile) return setOutput2("*Mobile is required");
     if (!address) return setOutput2("*Address is required");
     if (!city) return setOutput2("*City is required");
+
+    const message = checkValidData(email);
+
+    setOutput2(message);
+    if (message) return;
 
     var userDetail = {
       name: name,

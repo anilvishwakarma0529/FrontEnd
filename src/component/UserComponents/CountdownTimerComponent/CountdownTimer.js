@@ -14,10 +14,10 @@ const CountdownTimer = ({ createdAt }) => {
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        day: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hr: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        min: Math.floor((difference / 1000 / 60) % 60),
+        sec: Math.floor((difference / 1000) % 60),
       };
     }
 
@@ -41,33 +41,34 @@ const CountdownTimer = ({ createdAt }) => {
       return;
     }
 
-    timerComponents.push(timeLeft[interval]);
+    timerComponents.push(
+      <span key={interval}>
+        {timeLeft[interval]} {interval}{" "}
+      </span>
+    );
   });
 
   return (
     <div>
       {timerComponents.length ? (
         <>
-          <p
-            className={`text-center ${
-              theme === "dark" ? "text-dark" : "text-light"
-            }`}
-          >
-            Auction ends in :
-          </p>
+          <p className={`text-center text-success`}>Auction ends in :</p>
           <table className="text-center table table-bordered">
-            <thead
+            {/* <thead
               className={`${
                 theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"
               }`}
             >
               <tr>
-                <td>Day</td>
+                {timerComponents.map((row) => (
+                  <td>{row.props.children[2]}</td>
+                ))}
+                {/* <td>Day</td>
                 <td>Hr</td>
                 <td>Min</td>
-                <td>Sec</td>
+                <td>Sec</td> 
               </tr>
-            </thead>
+            </thead> */}
             <tbody
               className={`${
                 theme === "dark"
@@ -76,22 +77,15 @@ const CountdownTimer = ({ createdAt }) => {
               }`}
             >
               <tr>
-                <td>{timerComponents[0]}</td>
-                <td>{timerComponents[1]}</td>
-                <td>{timerComponents[2]}</td>
-                <td>{timerComponents[3]}</td>
+                {timerComponents.map((row) => (
+                  <td>{row}</td>
+                ))}
               </tr>
             </tbody>
           </table>
         </>
       ) : (
-        <p
-          className={`text-center ${
-            theme === "dark" ? "text-dark" : "text-light"
-          }`}
-        >
-          Auction Closed
-        </p>
+        <p className={`text-center text-danger`}>Auction Closed</p>
       )}
     </div>
   );

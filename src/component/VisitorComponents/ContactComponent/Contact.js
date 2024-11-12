@@ -96,7 +96,7 @@ function Contact() {
                 </div>
                 <div>
                   <button
-                    className="btn btn-primary py-2 px-4"
+                    className="btn btn-primary py-2 px-4 font-bold rounded-lg"
                     type="submit"
                     id="sendMessageButton"
                   >

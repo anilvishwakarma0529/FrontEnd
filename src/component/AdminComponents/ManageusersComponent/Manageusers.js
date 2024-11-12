@@ -62,7 +62,7 @@ function Manageusers() {
 
   useEffect(() => {
     var condition_obj = { role: "user" };
-    axios
+    axios     
       .get(FetchUserApiUrl, {
         params: {
           condition_obj: condition_obj,
