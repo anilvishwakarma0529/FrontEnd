@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL;
+const BASE_URL = "http://3.109.15.136:3001";
 
 // export const SaveUserApiUrl = "http://localhost:3001/user/save";
 
